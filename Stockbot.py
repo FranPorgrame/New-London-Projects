@@ -8,6 +8,7 @@ def get_stock_percent(ticker):
     data = NQ.history(period="2wk", interval="1d")
     data['Percent Change'] = data['Close'].pct_change() * 100
     return data[['Close', 'Percent Change']]
-    
+results = get_stock_percent("NQ=F")
+print(results)
 
 #Creating a message to send to the user
